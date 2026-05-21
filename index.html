@@ -188,38 +188,44 @@
 <deck-stage width="1920" height="1080">
 
   <!-- 1 — COVER ------------------------------------------------------- -->
+  <!-- Cover layout (locked 2026-05-21): explicit navy header bar + image
+       middle + navy footer band. Renders consistently regardless of image
+       aspect ratio — bars are always visually distinct. -->
   <section data-label="01 Cover">
-    <div style="position:absolute; inset:0; background:var(--ink); overflow:hidden;">
-      <img src="images/cover.jpg" alt="2600 S Robertson Blvd building rendering" style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position: center center;"/>
+    <div style="position:absolute; inset:0; background:var(--ink); display:flex; flex-direction:column; overflow:hidden;">
 
-      <!-- Top thin overlay: file marker + confidential -->
-      <div style="position:absolute; left:0; right:0; top:0; padding: 56px 110px 0;
+      <!-- HEADER BAR — fixed navy strip with file marker + descriptor -->
+      <div style="height: 140px; padding: 48px 110px 0; box-sizing:border-box;
                   display:flex; justify-content:space-between; align-items:flex-start;
                   font-family: var(--mono); font-size: 22px; letter-spacing: 0.22em; text-transform: uppercase;
-                  color: rgba(255,255,255,0.85);
-                  text-shadow: 0 2px 12px rgba(0,0,0,0.55);">
-        <div style="display:flex; flex-direction:column; gap: 12px;">
+                  color: rgba(255,255,255,0.92);
+                  background: var(--ink);">
+        <div style="display:flex; flex-direction:column; gap: 10px;">
           <span>Offering Memorandum / 2026</span>
           <span style="font-size: 18px; letter-spacing: 0.22em; color: rgba(197,162,88,0.95);">ED1 Mixed-Use Development · Delivered RTI · 150 Units + Retail</span>
         </div>
         <span>Confidential</span>
       </div>
 
-      <!-- Conceptual Rendering corner label — flush to bottom-right edge -->
-      <div style="position:absolute; right: 0; bottom: 0; z-index: 5;
-                  font-family: var(--mono); font-size: 16px; letter-spacing: 0.22em; text-transform: uppercase;
-                  color: rgba(255,255,255,0.92);
-                  background: rgba(14,31,51,0.65);
-                  padding: 8px 14px;
-                  border-left: 2px solid var(--gold);">
-        Conceptual Rendering
+      <!-- IMAGE AREA — fills space between header and footer -->
+      <div style="flex:1; min-height:0; position:relative; background:var(--ink); overflow:hidden;">
+        <img src="images/cover.jpg" alt="2600 S Robertson Blvd building rendering" style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position: center center;"/>
+        <!-- Conceptual Rendering corner label — flush to bottom-right edge of image area -->
+        <div style="position:absolute; right: 0; bottom: 0; z-index: 5;
+                    font-family: var(--mono); font-size: 16px; letter-spacing: 0.22em; text-transform: uppercase;
+                    color: rgba(255,255,255,0.92);
+                    background: rgba(14,31,51,0.65);
+                    padding: 8px 14px;
+                    border-left: 2px solid var(--gold);">
+          Conceptual Rendering
+        </div>
       </div>
 
-      <!-- Bottom band: project info + address -->
-      <div style="position:absolute; left:0; right:0; bottom:0;
-                  background: linear-gradient(to top, rgba(14,31,51,0.78), rgba(14,31,51,0.36) 60%, rgba(14,31,51,0));
-                  padding: 32px 110px 36px; color: var(--paper);">
-        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 48px; align-items:flex-end;">
+      <!-- FOOTER BAND — Address / Status / List Price -->
+      <div style="height: 180px; padding: 32px 110px 36px; box-sizing:border-box;
+                  background: var(--ink); color: var(--paper);
+                  border-top: 1px solid rgba(255,255,255,0.18);">
+        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 48px; align-items:flex-end; height:100%;">
           <div>
             <div style="font-family: var(--mono); font-size: 16px; letter-spacing: 0.2em; text-transform: uppercase; color: #9bb0cc; margin-bottom: 8px;">Address</div>
             <div style="font-family: var(--serif); font-weight: 300; font-size: 24px; line-height: 1.2; color: var(--paper);">2600–2610 S Robertson Blvd · Los Angeles, CA 90034</div>
