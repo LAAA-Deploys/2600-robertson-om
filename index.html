@@ -194,11 +194,14 @@
 
       <!-- Top thin overlay: file marker + confidential -->
       <div style="position:absolute; left:0; right:0; top:0; padding: 56px 110px 0;
-                  display:flex; justify-content:space-between; align-items:baseline;
+                  display:flex; justify-content:space-between; align-items:flex-start;
                   font-family: var(--mono); font-size: 22px; letter-spacing: 0.22em; text-transform: uppercase;
                   color: rgba(255,255,255,0.85);
                   text-shadow: 0 2px 12px rgba(0,0,0,0.55);">
-        <span>Offering Memorandum / 2026</span>
+        <div style="display:flex; flex-direction:column; gap: 12px;">
+          <span>Offering Memorandum / 2026</span>
+          <span style="font-size: 18px; letter-spacing: 0.22em; color: rgba(197,162,88,0.95);">ED1 Mixed-Use Development · Delivered RTI · 150 Units + Retail</span>
+        </div>
         <span>Confidential</span>
       </div>
 
@@ -216,11 +219,7 @@
       <div style="position:absolute; left:0; right:0; bottom:0;
                   background: linear-gradient(to top, rgba(14,31,51,0.78), rgba(14,31,51,0.36) 60%, rgba(14,31,51,0));
                   padding: 32px 110px 36px; color: var(--paper);">
-        <div style="font-family: var(--mono); color: var(--accent-soft); letter-spacing: 0.24em; font-size: 20px; text-transform:uppercase; margin-bottom: 18px;">
-          ED1 Mixed-Use Development · Delivered RTI · 150 Units + Retail
-        </div>
-        <div style="padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.22);
-                    display:grid; grid-template-columns: repeat(3, 1fr); gap: 48px; align-items:flex-end;">
+        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 48px; align-items:flex-end;">
           <div>
             <div style="font-family: var(--mono); font-size: 16px; letter-spacing: 0.2em; text-transform: uppercase; color: #9bb0cc; margin-bottom: 8px;">Address</div>
             <div style="font-family: var(--serif); font-weight: 300; font-size: 24px; line-height: 1.2; color: var(--paper);">2600–2610 S Robertson Blvd · Los Angeles, CA 90034</div>
